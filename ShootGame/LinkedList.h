@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stdlib.h>
+#include <initializer_list>
 #include <cassert>
 
 namespace myDataStructure
