@@ -3,7 +3,7 @@
 #include <initializer_list>
 #include <cassert>
 
-namespace myDataStructure
+namespace ShootingGame
 {
 	template <typename T>
 	class LinkedList
@@ -322,7 +322,7 @@ namespace myDataStructure
 		prevNode->next = nextNode;
 
 		++iter;
-		free(curNode);
+		delete curNode;
 
 		return iter;
 	}

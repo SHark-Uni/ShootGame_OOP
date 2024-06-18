@@ -90,6 +90,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,10 +132,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ShootGame.cpp" />
+    <ClCompile Include="BaseScene.h" />
+    <ClCompile Include="ClearScene.h" />
+    <ClCompile Include="GameBaseObject.cpp" />
+    <ClCompile Include="GameObjectManagerTest.cpp" />
+    <ClCompile Include="GameObjectManger.cpp" />
+    <ClCompile Include="LoadScene.h" />
+    <ClCompile Include="GameStageScene.h" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerTest.cpp" />
+    <ClCompile Include="ScreenBuffer.cpp" />
+    <ClCompile Include="ScreenTest.cpp" />
+    <ClCompile Include="StageLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\OneDrive\바탕 화면\Dev\MySTL\LinkedList_iter\LinkedList.h" />
+    <ClInclude Include="GameBaseObject.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="DeadScene.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="GameObjectManager.h" />
+    <ClInclude Include="GameObjectManagerTest.h" />
+    <ClInclude Include="IAssetLoader.h" />
+    <ClInclude Include="IPlayable.h" />
+    <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="ScreenBuffer.h" />
+    <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="TypeId.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

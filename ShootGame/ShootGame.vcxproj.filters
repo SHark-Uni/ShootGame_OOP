@@ -1,27 +1,132 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="리소스 파일">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="메인">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{5ee1da5e-198a-436a-8685-32a3b8cc2c38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject">
+      <UniqueIdentifier>{d80260b0-c294-4773-a5ac-cfe8b92425f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\RenderObject">
+      <UniqueIdentifier>{296474ef-1dc9-4b6e-a62d-60c68359c54d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\DataStructure">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Contents">
+      <UniqueIdentifier>{dba48d81-9374-4749-a8e4-33bceae26761}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Scene">
+      <UniqueIdentifier>{a591f22b-f940-4d4b-a0dd-70f2af1b5efa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Loader">
+      <UniqueIdentifier>{003db2cb-7b9b-42e7-85d1-1ef01d78291a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GameObject">
+      <UniqueIdentifier>{911da540-2851-4c96-8edd-80ce97ec0794}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GameObject\Interface">
+      <UniqueIdentifier>{fb4d5402-4848-4b54-b5d8-149fb2a9b869}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GameObject\enum">
+      <UniqueIdentifier>{b46d7da1-f2c9-4a0c-a61f-d18e1dc9ffde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="테스트코드">
+      <UniqueIdentifier>{3a175157-f462-4283-adfe-af1438818205}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ShootGame.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="LoadScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ClearScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStageScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="StageLoader.cpp">
+      <Filter>Contents\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Contents\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenBuffer.cpp">
+      <Filter>Engine\RenderObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GameBaseObject.cpp">
+      <Filter>Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>메인</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectManger.cpp">
+      <Filter>Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerTest.cpp">
+      <Filter>테스트코드</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectManagerTest.cpp">
+      <Filter>테스트코드</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenTest.cpp">
+      <Filter>테스트코드</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\OneDrive\바탕 화면\Dev\MySTL\LinkedList_iter\LinkedList.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="LinkedList.h">
+      <Filter>Engine\DataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Contents\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Contents\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Contents\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="DeadScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="IAssetLoader.h">
+      <Filter>Contents\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="IPlayable.h">
+      <Filter>Contents\GameObject\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenBuffer.h">
+      <Filter>Engine\RenderObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GameBaseObject.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectManager.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeId.h">
+      <Filter>Contents\GameObject\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectManagerTest.h">
+      <Filter>테스트코드</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,0 +1,6 @@
+ENEMY COUNT
+	3
+ENEMY POSITION
+	(10,5,2)
+	(10,10,1)
+	(10,15,1)

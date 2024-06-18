@@ -1,0 +1,6 @@
+STAGE COUNT
+	3
+STAGE FILENAME
+	stage1.txt
+	stage2.txt
+	stage3.txt
