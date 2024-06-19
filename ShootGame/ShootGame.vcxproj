@@ -133,7 +133,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseScene.h" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="ClearScene.h" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameBaseObject.cpp" />
     <ClCompile Include="GameObjectManagerTest.cpp" />
     <ClCompile Include="GameObjectManger.cpp" />

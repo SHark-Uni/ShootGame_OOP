@@ -84,6 +84,12 @@
     <ClCompile Include="ScreenTest.cpp">
       <Filter>테스트코드</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Contents\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Contents\GameObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h">
