@@ -2,6 +2,7 @@
 #include <windows.h>
 
 #include "Player.h"
+#include "Bullet.h"
 #include "ScreenBuffer.h"
 #include "GameObjectManager.h"
 #include "TypeId.h"
@@ -34,13 +35,13 @@ void Player::Move(const int keyinput)
 		}
 		break;
 	case VK_RIGHT:
-		if (mX < MAX_SCREEN_WIDTH - 1)
+		if (mX < MAX_MOVABLE_WIDTH_INDEX)
 		{
 			++mX;
 		}
 		break;
 	case VK_DOWN:
-		if (mY < MAX_SCREEN_HEIGHT)
+		if (mY < MAX_MOVABLE_HEIGHT_INDEX)
 		{
 			++mY;
 		}
@@ -59,7 +60,9 @@ void Player::Move(const int keyinput)
 
 void Player::Attack()
 {
-	GameObjectManager 
+	GameObjectManager& gm = GameObjectManager::GetInstance();
+
+	gm.CreateObject(new Bullet(mX, mY - 1, static_cast<int>(ETypeId::PLAYER), mAttackSpeed));
 }
 
 
@@ -68,31 +71,26 @@ void Player::KeyInput()
 	if (GetAsyncKeyState(VK_LEFT))
 	{
 		Move(VK_LEFT);
-		return;
 	}
 
 	if (GetAsyncKeyState(VK_RIGHT))
 	{
 		Move(VK_RIGHT);
-		return;
 	}
 
 	if (GetAsyncKeyState(VK_DOWN))
 	{
 		Move(VK_DOWN);
-		return;
 	}
 
 	if (GetAsyncKeyState(VK_UP))
 	{
 		Move(VK_UP);
-		return;
 	}
 	// °ø°Ý Å° 
 	if (GetAsyncKeyState('Z'))
 	{
 		Attack();
-		return;
 	}
 }
 

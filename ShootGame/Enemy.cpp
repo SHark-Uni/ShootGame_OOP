@@ -20,7 +20,8 @@ Enemy::Enemy(EnemyInfo_t enemyInfo)
 //무빙 패턴에 따라 움직여야함.
 void Enemy::Move()
 {
-
+	//TEST Move
+	++mX;
 }
 
 //Create Bullet
@@ -33,8 +34,10 @@ void Enemy::Attack()
 
 void Enemy::Update()
 {
-	//Move
-	
+	//공격 후 , 움직이기
+	Attack();
+	Move();
+	Draw();
 }
 
 void Enemy::Draw()

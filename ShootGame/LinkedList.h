@@ -41,6 +41,8 @@ namespace ShootingGame
 				return *this;
 			}
 
+ 
+
 			inline iterator operator++(int)
 			{
 				iterator tmp(mNode);

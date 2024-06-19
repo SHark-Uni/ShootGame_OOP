@@ -4,6 +4,8 @@
 
 #define MAX_SCREEN_HEIGHT (24)
 #define MAX_SCREEN_WIDTH (81)
+#define MAX_MOVABLE_WIDTH_INDEX (79)
+#define MAX_MOVABLE_HEIGHT_INDEX (23)
 
 namespace ShootingGame
 {

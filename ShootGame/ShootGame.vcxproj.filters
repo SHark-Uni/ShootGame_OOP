@@ -75,9 +75,6 @@
     <ClCompile Include="GameObjectManger.cpp">
       <Filter>Engine\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerTest.cpp">
-      <Filter>테스트코드</Filter>
-    </ClCompile>
     <ClCompile Include="GameObjectManagerTest.cpp">
       <Filter>테스트코드</Filter>
     </ClCompile>
@@ -133,6 +130,12 @@
     </ClInclude>
     <ClInclude Include="GameObjectManagerTest.h">
       <Filter>테스트코드</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerTest.h">
+      <Filter>테스트코드</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerManager.h">
+      <Filter>Engine\GameObject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

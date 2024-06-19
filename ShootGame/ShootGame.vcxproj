@@ -143,7 +143,6 @@
     <ClCompile Include="GameStageScene.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="PlayerTest.cpp" />
     <ClCompile Include="ScreenBuffer.cpp" />
     <ClCompile Include="ScreenTest.cpp" />
     <ClCompile Include="StageLoader.cpp" />
@@ -159,8 +158,10 @@
     <ClInclude Include="IPlayable.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerTest.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="ScreenBuffer.h" />
+    <ClInclude Include="TimerManager.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="TypeId.h" />
   </ItemGroup>
