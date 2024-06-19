@@ -12,6 +12,7 @@ Player::Player(playerInfo_t playerInfo)
 	:GameBaseObject(static_cast<int>(ETypeId::PLAYER), playerInfo.x, playerInfo.y)
 	,mHp(playerInfo.hp)
 	,mAttackPower(playerInfo.atk)
+	,mAttackSpeed(playerInfo.attackSpeed)
 	,mSpeed(playerInfo.speed)
 {
 
@@ -116,13 +117,7 @@ void Player::Update()
 }
 
 
-
 void Player::OnCollision(GameBaseObject* object)
 {
-
-}
-
-void Player::Destroy()
-{
-	
+	mIsAlive = false;
 }

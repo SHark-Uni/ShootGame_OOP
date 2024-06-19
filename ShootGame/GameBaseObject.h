@@ -13,8 +13,6 @@ namespace ShootingGame
 		virtual void Update() = 0;
 		virtual void Draw() = 0;
 		virtual void OnCollision(GameBaseObject* object) = 0;
-		virtual void Destroy() = 0;
-
 
 	protected:
 		int mTypeId;

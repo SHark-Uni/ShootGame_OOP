@@ -2,11 +2,26 @@
 
 #include "GameBaseObject.h"
 
+
 namespace ShootingGame
 {
 	class Enemy : public GameBaseObject
 	{
-		Enemy(int x, int y);
+		typedef struct EnemyInfo
+		{
+			int x;
+			int y;
+
+			int hp;
+			int atk;
+			int attackSpeed;
+
+			int speed;
+			int pattern;
+		}EnemyInfo_t;
+
+		Enemy(EnemyInfo_t enemyInfo);
+		virtual ~Enemy();
 
 		void Move();
 		void Attack();
@@ -15,11 +30,13 @@ namespace ShootingGame
 		void Draw() override;
 
 		void OnCollision(GameBaseObject* object) override;
-		void Destroy() override;
 	private:
-		unsigned int mMovingPattern;
-		unsigned int mSpeed;
+		int mMovingPattern;
+		
 		int mHp;
+		int mSpeed;
+
 		int mAttackPower;
+		int mAttackSpeed;
 	};
 }

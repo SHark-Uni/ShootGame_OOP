@@ -12,7 +12,10 @@ namespace ShootingGame
 		{
 			int x;
 			int y;
+
 			int atk;
+			int attackSpeed;
+
 			int hp;
 			int speed;
 		}playerInfo_t;
@@ -27,10 +30,11 @@ namespace ShootingGame
 		void Draw() override;
 
 		void OnCollision(GameBaseObject* object) override;
-		void Destroy() override;
 	private:
 		int mHp;
-		int mAttackPower;
 		int mSpeed;
+
+		int mAttackPower;
+		int mAttackSpeed;
 	};
 }

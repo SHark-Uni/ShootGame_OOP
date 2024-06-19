@@ -24,7 +24,7 @@ void GameObjectManager::CreateObject(GameBaseObject* obj)
 	mList.push_back(obj);
 }
 
-void GameObjectManager::DestroyObject()
+void GameObjectManager::DestroyAllObject()
 {
 	LinkedList<GameBaseObject*>::iterator iter;
 	for (iter = mList.begin(); iter != mList.end(); ++iter)
@@ -34,7 +34,7 @@ void GameObjectManager::DestroyObject()
 	mList.clear();
 }
 
-void GameObjectManager::CheckCollision()
+void GameObjectManager::DestroyColliedObject()
 {
 	LinkedList<GameBaseObject*>::iterator iter;
 	for (iter = mList.begin(); iter != mList.end(); )

@@ -9,11 +9,11 @@ namespace ShootingGame
 	{
 	public:
 		void CreateObject(GameBaseObject* obj);
-		void DestroyObject();
+		void DestroyAllObject();
 
 		static GameObjectManager& GetInstance();
 
-		void CheckCollision();
+		void DestroyColliedObject();
 
 		void Update();
 		void Draw();
