@@ -6,5 +6,8 @@ namespace ShootingGame
 	{
 	public:
 		virtual void Load() = 0;
+		virtual ~IAssetLoader()
+		{
+		}
 	};
 }

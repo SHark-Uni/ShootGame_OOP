@@ -87,6 +87,9 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>Contents\GameObject</Filter>
     </ClCompile>
+    <ClCompile Include="FrameManager.cpp">
+      <Filter>Engine\GameObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h">
@@ -134,7 +137,7 @@
     <ClInclude Include="PlayerTest.h">
       <Filter>테스트코드</Filter>
     </ClInclude>
-    <ClInclude Include="TimerManager.h">
+    <ClInclude Include="FrameManager.h">
       <Filter>Engine\GameObject</Filter>
     </ClInclude>
   </ItemGroup>
