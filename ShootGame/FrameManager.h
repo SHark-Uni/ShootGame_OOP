@@ -14,9 +14,8 @@ namespace ShootingGame
 		void SetFrame(unsigned int frame);
 
 		DWORD GetMilliSeconds() const;
-
 	private:
-		FrameManager(unsigned int frame);
+		FrameManager();
 		~FrameManager();
 
 		FrameManager(const FrameManager& other) = delete;

@@ -90,6 +90,12 @@
     <ClCompile Include="FrameManager.cpp">
       <Filter>Engine\GameObject</Filter>
     </ClCompile>
+    <ClCompile Include="AssetLoaderManager.cpp">
+      <Filter>Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="FIleLoaderTest.h">
+      <Filter>테스트코드</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h">
@@ -109,9 +115,6 @@
     </ClInclude>
     <ClInclude Include="TitleScene.h">
       <Filter>Contents\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="IAssetLoader.h">
-      <Filter>Contents\Loader</Filter>
     </ClInclude>
     <ClInclude Include="IPlayable.h">
       <Filter>Contents\GameObject\Interface</Filter>
@@ -142,6 +145,12 @@
     </ClInclude>
     <ClInclude Include="FileLoader.h">
       <Filter>Contents\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseAssetLoader.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetLoaderManager.h">
+      <Filter>Engine\GameObject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

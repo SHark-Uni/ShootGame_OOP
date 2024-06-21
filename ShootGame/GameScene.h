@@ -4,7 +4,7 @@
 
 namespace ShootingGame
 {
-	class ClearScene : public BaseScene
+	class GameScene : public BaseScene
 	{
 		void Update() override;
 	};

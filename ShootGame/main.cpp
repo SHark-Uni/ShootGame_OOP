@@ -7,33 +7,44 @@
 #include "GameObjectManagerTest.h"
 #include "PlayerTest.h"
 #include "FrameManager.h"
+#include "AssetLoaderManager.h"
+
+#include "FIleLoaderTest.h"
 
 using namespace ShootingGame;
 
 int main()
 {
 	timeBeginPeriod(1);
-	
-	FrameManager& timer = FrameManager::GetInstance();
+	LoaderTest();
+#if 0
+	FrameManager& TIMER = FrameManager::GetInstance();
+	GameObjectManager& GM = GameObjectManager::GetInstance();
+	ScreenBuffer& CONSOLE = ScreenBuffer::GetInstance();
+	AssetLoaderManager& ASSETLOADER = AssetLoaderManager::GetInstance();
 
-	DWORD nextTick = timer.GetMilliSeconds();
+	DWORD nextTick = TIMER.GetMilliSeconds();
 	DWORD SleepTime;
 
+	ASSETLOADER.Load();
 	while (1)
 	{
-		nextTick += timer.GetFrame();
-		
+		CONSOLE.Clear();
+		GM.Update();
+		GM.Draw();
+		GM.DestroyColliedObject();
 
-		GameObjectManager::GetInstance().Update();
-
-		GameObjectManager::GetInstance().Draw();
-
-		GameObjectManager::GetInstance().DestroyColliedObject();
-		SleepTime = nextTick - timer.GetMilliSeconds();
+		nextTick += TIMER.GetFrame();
+		SleepTime = nextTick - TIMER.GetMilliSeconds();
 		if (SleepTime >= 0)
 		{
 			Sleep(SleepTime);
 		}
+		CONSOLE.Flip();
 	}
+
+	ASSETLOADER.DestroyAllLoader();
+	GM.DestroyAllObject();
+#endif
 }
 

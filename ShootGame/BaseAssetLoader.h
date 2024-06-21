@@ -2,11 +2,11 @@
 
 namespace ShootingGame
 {
-	class IAssetLoader
+	class BaseAssetLoader
 	{
 	public:
 		virtual void Load() = 0;
-		virtual ~IAssetLoader()
+		virtual ~BaseAssetLoader()
 		{
 		}
 	};

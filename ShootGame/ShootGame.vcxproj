@@ -132,10 +132,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AssetLoaderManager.cpp" />
     <ClCompile Include="BaseScene.h" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="ClearScene.h" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="FIleLoaderTest.h" />
     <ClCompile Include="FrameManager.cpp" />
     <ClCompile Include="GameBaseObject.cpp" />
     <ClCompile Include="GameObjectManagerTest.cpp" />
@@ -149,13 +151,14 @@
     <ClCompile Include="FileLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AssetLoaderManager.h" />
     <ClInclude Include="GameBaseObject.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="DeadScene.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="GameObjectManagerTest.h" />
-    <ClInclude Include="IAssetLoader.h" />
+    <ClInclude Include="BaseAssetLoader.h" />
     <ClInclude Include="IPlayable.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="Player.h" />

@@ -4,7 +4,7 @@ using namespace ShootingGame;
 
 FrameManager FrameManager::_FrameManager;
 
-FrameManager::FrameManager(unsigned int frame)
+FrameManager::FrameManager()
 	:mFRAME_PER_SECONDS(0)
 	,mMS_PER_FRAME(0)
 {

@@ -12,7 +12,6 @@ namespace ShootingGame
 	class ScreenBuffer
 	{
 	public:
-
 		static ScreenBuffer& GetInstance();
 		void SpriteDraw(int x, int y, WCHAR sprite);
 
