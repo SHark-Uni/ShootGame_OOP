@@ -5,10 +5,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="메인">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Engine">
       <UniqueIdentifier>{5ee1da5e-198a-436a-8685-32a3b8cc2c38}</UniqueIdentifier>
     </Filter>
@@ -40,8 +36,21 @@
     <Filter Include="Contents\GameObject\enum">
       <UniqueIdentifier>{b46d7da1-f2c9-4a0c-a61f-d18e1dc9ffde}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Scene">
+      <UniqueIdentifier>{2cd9f8c5-fbc6-4c7d-932b-9c0c4daffa7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Loader">
+      <UniqueIdentifier>{9e87a1e3-19a8-4404-8b99-27f30001b001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Frame">
+      <UniqueIdentifier>{d9685a18-1a3e-4e65-9ddd-d3a3b9b62513}</UniqueIdentifier>
+    </Filter>
     <Filter Include="테스트코드">
       <UniqueIdentifier>{3a175157-f462-4283-adfe-af1438818205}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="메인">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -51,10 +60,7 @@
     <ClCompile Include="ClearScene.h">
       <Filter>Contents\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="BaseScene.h">
-      <Filter>Contents\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="GameStageScene.h">
+    <ClCompile Include="GameScene.h">
       <Filter>Contents\Scene</Filter>
     </ClCompile>
     <ClCompile Include="FileLoader.cpp">
@@ -87,14 +93,17 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>Contents\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="FrameManager.cpp">
-      <Filter>Engine\GameObject</Filter>
-    </ClCompile>
-    <ClCompile Include="AssetLoaderManager.cpp">
-      <Filter>Engine\GameObject</Filter>
-    </ClCompile>
     <ClCompile Include="FIleLoaderTest.h">
       <Filter>테스트코드</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseScene.h">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetLoaderManager.cpp">
+      <Filter>Engine\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameManager.cpp">
+      <Filter>Engine\Frame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -128,9 +137,6 @@
     <ClInclude Include="GameObjectManager.h">
       <Filter>Engine\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>Engine\GameObject</Filter>
-    </ClInclude>
     <ClInclude Include="TypeId.h">
       <Filter>Contents\GameObject\enum</Filter>
     </ClInclude>
@@ -140,17 +146,20 @@
     <ClInclude Include="PlayerTest.h">
       <Filter>테스트코드</Filter>
     </ClInclude>
-    <ClInclude Include="FrameManager.h">
-      <Filter>Engine\GameObject</Filter>
-    </ClInclude>
     <ClInclude Include="FileLoader.h">
       <Filter>Contents\Loader</Filter>
     </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="BaseAssetLoader.h">
-      <Filter>Engine\GameObject</Filter>
+      <Filter>Engine\Loader</Filter>
     </ClInclude>
     <ClInclude Include="AssetLoaderManager.h">
-      <Filter>Engine\GameObject</Filter>
+      <Filter>Engine\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameManager.h">
+      <Filter>Engine\Frame</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

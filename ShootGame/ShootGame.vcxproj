@@ -143,7 +143,7 @@
     <ClCompile Include="GameObjectManagerTest.cpp" />
     <ClCompile Include="GameObjectManger.cpp" />
     <ClCompile Include="LoadScene.h" />
-    <ClCompile Include="GameStageScene.h" />
+    <ClCompile Include="GameScene.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ScreenBuffer.cpp" />
