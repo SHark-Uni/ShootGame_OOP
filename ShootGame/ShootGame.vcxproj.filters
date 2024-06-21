@@ -57,7 +57,7 @@
     <ClCompile Include="GameStageScene.h">
       <Filter>Contents\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="StageLoader.cpp">
+    <ClCompile Include="FileLoader.cpp">
       <Filter>Contents\Loader</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
@@ -139,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="FrameManager.h">
       <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="FileLoader.h">
+      <Filter>Contents\Loader</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

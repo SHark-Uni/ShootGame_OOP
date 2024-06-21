@@ -15,6 +15,7 @@ int main()
 	timeBeginPeriod(1);
 	
 	FrameManager& timer = FrameManager::GetInstance();
+
 	DWORD nextTick = timer.GetMilliSeconds();
 	DWORD SleepTime;
 
@@ -23,13 +24,11 @@ int main()
 		nextTick += timer.GetFrame();
 		
 
+		GameObjectManager::GetInstance().Update();
 
+		GameObjectManager::GetInstance().Draw();
 
-
-
-
-
-
+		GameObjectManager::GetInstance().DestroyColliedObject();
 		SleepTime = nextTick - timer.GetMilliSeconds();
 		if (SleepTime >= 0)
 		{

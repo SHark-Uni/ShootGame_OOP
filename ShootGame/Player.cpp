@@ -117,5 +117,9 @@ void Player::Update()
 
 void Player::OnCollision(GameBaseObject* object)
 {
-	mIsAlive = false;
+	if ((object->GetX() == mX) && (object->GetY() == mY))
+	{
+		mIsAlive = false;
+	}
+	return;
 }

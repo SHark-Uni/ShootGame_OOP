@@ -62,5 +62,9 @@ void Bullet::Update()
 
 void Bullet::OnCollision(GameBaseObject* object)
 {
-	mIsAlive = false;
+	if ((object->GetX() == mX) && (object->GetY() == mY))
+	{
+		mIsAlive = false;
+	}
+	return;
 }

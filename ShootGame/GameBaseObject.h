@@ -10,6 +10,9 @@ namespace ShootingGame
 		GameBaseObject(int ObjectType, int x, int y);
 		virtual ~GameBaseObject();
 
+		const int GetX() const;
+		const int GetY() const;
+
 		virtual void Update() = 0;
 		virtual void Draw() = 0;
 		virtual void OnCollision(GameBaseObject* object) = 0;

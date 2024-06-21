@@ -1,5 +1,3 @@
-//파일 로더 새롭게 만드는 중 ...
-#if 0 
 #define _CRT_NON_CONFORMING_WCSTOK
 #pragma warning( disable : 6387 6011)
 
@@ -8,18 +6,26 @@
 #include <cassert>
 #include <string>
 
-#include "StageLoader.h"
+#include "FileLoader.h"
 
 using namespace ShootingGame;
 
-StageLoader::StageLoader()
+FileLoader FileLoader::_FileLoader;
+
+FileLoader::FileLoader()
 	:mStageCount(0)
-	, mCurStage(0)
+	,mCurStage(0)
+	,mStageInfo(nullptr)
 {
 
 }
 
-void StageLoader::LoadStageFile()
+FileLoader& FileLoader::GetInstance()
+{
+	return _FileLoader;
+}
+
+void FileLoader::LoadStageMetaFile()
 {
 	FILE* fp;
 	
@@ -67,9 +73,10 @@ void StageLoader::LoadStageFile()
 	fp = nullptr;
 
 	//Read StageInfo
-	mStageInfo = new stageInfo_t[mStageCount];
+	mStageInfo = new StageInfo_t[mStageCount];
 	memset(Buffer, 0, MAX_SIZE);
 	token = nullptr;
+
 	for (size_t i = 0; i < mStageCount; i++)
 	{
 		size_t EnemyCount;
@@ -79,22 +86,20 @@ void StageLoader::LoadStageFile()
 		fgetws(Buffer, MAX_SIZE, fp);
 
 		fgetws(Buffer, MAX_SIZE, fp);
-		swscanf_s(Buffer, L"%d", &(mStageInfo[i].EnemyCount));
+		swscanf_s(Buffer, L"%d", &(mStageInfo[i].enemyCount));
 
-		EnemyCount = mStageInfo[i].EnemyCount;
-		mStageInfo[i].EnemyInfo = new EnemyInfo_t[EnemyCount];
+		EnemyCount = mStageInfo[i].enemyCount;
+		mStageInfo[i].enemies = new EnemyInfo_t[EnemyCount];
 		
 		//Read Header
 		fgetws(Buffer, MAX_SIZE, fp);
 
 		//Read EnemyInfo from File
-		EnemyInfo_t curEnemy;
 		for (size_t j = 0; j < EnemyCount; j++)
 		{
-			curEnemy = mStageInfo[i].EnemyInfo[j];
 			fgetws(Buffer, MAX_SIZE, fp);
 			token = wcstok_s(Buffer, delims, &nextToken);
-			swscanf_s(token, L"(%d,%d,%d)", &(curEnemy.x), &(curEnemy.y), &(curEnemy.movingPattern));
+			swscanf_s(token, L"(%d,%d,%d)", &(mStageInfo[i].enemies[j].x), &(mStageInfo[i].enemies[j].y), &(mStageInfo[i].enemies[j].pattern));
 		}
 	}
 
@@ -106,12 +111,12 @@ void StageLoader::LoadStageFile()
 	fileNames = nullptr;
 }
 
-const StageLoader::stageInfo_t& StageLoader::GetStageInfo() const
+const FileLoader::StageInfo_t& FileLoader::GetStageInfo() const
 {
 	return mStageInfo[mCurStage];
 }
 
-void StageLoader::GoNextStage()
+void FileLoader::GoNextStage()
 {
 	if (mStageCount > mCurStage)
 	{
@@ -120,12 +125,16 @@ void StageLoader::GoNextStage()
 	return;
 }
 
-StageLoader::~StageLoader()
+void FileLoader::LoadPatternFile()
+{
+
+}
+
+FileLoader::~FileLoader()
 {
 	for (size_t i = 0; i < mStageCount; i++)
 	{
-		delete[] (mStageInfo[i].EnemyInfo);
+		delete[] (mStageInfo[i].enemies);
 	}
 	delete[] mStageInfo;
 }
-#endif

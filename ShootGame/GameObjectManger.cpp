@@ -51,10 +51,18 @@ void GameObjectManager::DestroyColliedObject()
 
 void GameObjectManager::Update()
 {
-	LinkedList<GameBaseObject*>::iterator iter;
-	for (iter = mList.begin(); iter != mList.end(); ++iter)
+	LinkedList<GameBaseObject*>::iterator curObject;
+	LinkedList<GameBaseObject*>::iterator targetObject;
+	for (curObject = mList.begin(); curObject != mList.end(); ++curObject)
 	{
-		(*iter)->Update();
+		targetObject = curObject;
+		(*curObject)->Update();
+
+		for (++targetObject; targetObject != mList.end(); ++targetObject)
+		{
+			(*curObject)->OnCollision((*targetObject));
+			(*targetObject)->OnCollision((*curObject));
+		}
 	}
 }
 

@@ -146,7 +146,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ScreenBuffer.cpp" />
     <ClCompile Include="ScreenTest.cpp" />
-    <ClCompile Include="StageLoader.cpp" />
+    <ClCompile Include="FileLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameBaseObject.h" />
@@ -163,6 +163,7 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="ScreenBuffer.h" />
     <ClInclude Include="FrameManager.h" />
+    <ClInclude Include="FileLoader.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="TypeId.h" />
   </ItemGroup>

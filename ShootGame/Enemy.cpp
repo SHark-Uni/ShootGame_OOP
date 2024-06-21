@@ -49,7 +49,11 @@ void Enemy::Draw()
 
 void Enemy::OnCollision(GameBaseObject* object)
 {
-	mIsAlive = false;
+	if ((object->GetX() == mX) && (object->GetY() == mY))
+	{
+		mIsAlive = false;
+	}
+	return;
 }
 
 

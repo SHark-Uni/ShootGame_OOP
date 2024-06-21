@@ -11,6 +11,15 @@ GameBaseObject::GameBaseObject(int typeId, int x, int y)
 
 }
 
+const int GameBaseObject::GetX() const
+{
+	return mX;
+}
+const int GameBaseObject::GetY() const
+{
+	return mY;
+}
+
 GameBaseObject::~GameBaseObject()
 {
 	
