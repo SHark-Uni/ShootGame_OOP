@@ -8,22 +8,11 @@ namespace ShootingGame
 	class Player : public GameBaseObject, public IPlayable
 	{
 	public:
-		typedef struct player
-		{
-			int x;
-			int y;
-
-			int atk;
-			int attackSpeed;
-
-			int hp;
-			int speed;
-		}playerInfo_t;
-
-		Player(playerInfo_t playerInfo);
+		Player(int x, int y);
 		~Player();
 		void Move(const int keyinput);
 		void Attack();
+		void Attacked(int damage);
 
 		void KeyInput() override;
 		void Update() override;

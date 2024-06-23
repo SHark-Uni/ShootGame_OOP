@@ -12,6 +12,7 @@ namespace ShootingGame
 
 		const int GetX() const;
 		const int GetY() const;
+		const int GetTypeId() const;
 
 		virtual void Update() = 0;
 		virtual void Draw() = 0;

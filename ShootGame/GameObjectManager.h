@@ -13,8 +13,10 @@ namespace ShootingGame
 
 		static GameObjectManager& GetInstance();
 
-		void DestroyColliedObject();
 
+		const LinkedList<GameBaseObject*>& GetObjectList() const;
+		void DestroyColliedObject();
+		
 		void Update();
 		void Draw();
 	private:

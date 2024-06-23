@@ -34,6 +34,11 @@ void GameObjectManager::DestroyAllObject()
 	mList.clear();
 }
 
+const LinkedList<GameBaseObject*>& GameObjectManager::GetObjectList() const
+{
+	return mList;
+}
+
 void GameObjectManager::DestroyColliedObject()
 {
 	LinkedList<GameBaseObject*>::iterator iter;

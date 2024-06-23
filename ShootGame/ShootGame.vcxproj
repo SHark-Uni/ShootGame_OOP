@@ -133,6 +133,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AssetLoaderManager.cpp" />
+    <ClCompile Include="BaseScene.cpp" />
     <ClCompile Include="BaseScene.h" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="ClearScene.h" />
@@ -140,25 +141,34 @@
     <ClCompile Include="FIleLoaderTest.h" />
     <ClCompile Include="FrameManager.cpp" />
     <ClCompile Include="GameBaseObject.cpp" />
+    <ClCompile Include="GameEntry.cpp" />
     <ClCompile Include="GameObjectManagerTest.cpp" />
     <ClCompile Include="GameObjectManger.cpp" />
+    <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="InitializerManager.cpp" />
     <ClCompile Include="LoadScene.h" />
     <ClCompile Include="GameScene.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="ScreenBuffer.cpp" />
     <ClCompile Include="ScreenTest.cpp" />
     <ClCompile Include="FileLoader.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssetLoaderManager.h" />
+    <ClInclude Include="EnemyTypeId.h" />
     <ClInclude Include="GameBaseObject.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="DeadScene.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="GameInitializer.h" />
+    <ClInclude Include="GameEntry.h" />
     <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="GameObjectManagerTest.h" />
     <ClInclude Include="BaseAssetLoader.h" />
+    <ClInclude Include="InitializerManager.h" />
     <ClInclude Include="IPlayable.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="Player.h" />

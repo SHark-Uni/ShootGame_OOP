@@ -9,12 +9,12 @@
 
 using namespace ShootingGame;
 
-Player::Player(playerInfo_t playerInfo)
-	:GameBaseObject(static_cast<int>(ETypeId::PLAYER), playerInfo.x, playerInfo.y)
-	,mHp(playerInfo.hp)
-	,mAttackPower(playerInfo.atk)
-	,mAttackSpeed(playerInfo.attackSpeed)
-	,mSpeed(playerInfo.speed)
+Player::Player(int x, int y)
+	:GameBaseObject(static_cast<int>(eTypeId::PLAYER), x, y)
+	,mHp(10)
+	,mAttackPower(3)
+	,mAttackSpeed(20)
+	,mSpeed(20)
 {
 
 }
@@ -61,10 +61,18 @@ void Player::Move(const int keyinput)
 void Player::Attack()
 {
 	GameObjectManager& gm = GameObjectManager::GetInstance();
-
-	gm.CreateObject(new Bullet(mX, mY - 1, static_cast<int>(ETypeId::PLAYER), mAttackSpeed));
+	gm.CreateObject(new Bullet(mX, mY - 1, static_cast<int>(eTypeId::PLAYER), mAttackPower, mAttackSpeed));
 }
 
+void Player::Attacked(int damage)
+{
+	mHp -= damage;
+	if (mHp < 0)
+	{
+		mIsAlive = false;
+	}
+	return;
+}
 
 void Player::KeyInput()
 {
@@ -99,27 +107,20 @@ void Player::Draw()
 {
 	ScreenBuffer& s = ScreenBuffer::GetInstance();
 
-	s.SpriteDraw(mX, mY, L'P');
+	s.DrawSprite(mX, mY, L'P');
 
-	s.SpriteDraw(0, 23, L'H');
-	s.SpriteDraw(1, 23, L'P');
-	s.SpriteDraw(2, 23, L'0' + mHp);
+	s.DrawSprite(0, 23, L'H');
+	s.DrawSprite(1, 23, L'P');
+	s.DrawSprite(2, 23, L'0' + mHp);
 }
 
 void Player::Update()
 {
-	//키입력
 	KeyInput();
-	//렌더링
-	Draw();
 }
 
 
 void Player::OnCollision(GameBaseObject* object)
 {
-	if ((object->GetX() == mX) && (object->GetY() == mY))
-	{
-		mIsAlive = false;
-	}
 	return;
 }

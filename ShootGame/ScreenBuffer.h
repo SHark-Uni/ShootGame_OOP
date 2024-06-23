@@ -13,7 +13,8 @@ namespace ShootingGame
 	{
 	public:
 		static ScreenBuffer& GetInstance();
-		void SpriteDraw(int x, int y, WCHAR sprite);
+		void DrawSprite(int x, int y, WCHAR sprite);
+		void DrawString(const WCHAR* str, int x, int y);
 
 		void Clear();
 		void Flip();

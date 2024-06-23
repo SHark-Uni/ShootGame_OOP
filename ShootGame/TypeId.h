@@ -2,7 +2,7 @@
 
 namespace ShootingGame
 {
-	enum class ETypeId
+	enum class eTypeId
 	{
 		PLAYER,
 		ENEMY,

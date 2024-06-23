@@ -23,7 +23,20 @@ ScreenBuffer::~ScreenBuffer()
 
 }
 
-void ScreenBuffer::SpriteDraw(int iX, int iY, WCHAR chSprite)
+void ScreenBuffer::DrawString(const WCHAR* str, int x, int y)
+{
+	if (x < 0 || x >= MAX_SCREEN_WIDTH - 1 || y < 0 || y >= MAX_SCREEN_HEIGHT)
+		return;
+	size_t TextLength = wcslen(str);
+	// 화면을 넘어가는 경우 짤라주자
+	if ((x + TextLength) >= MAX_SCREEN_WIDTH - 1)
+	{
+		TextLength = (MAX_SCREEN_WIDTH - 1) - x;
+	}
+	wcsncpy_s(mScreenBuffer[y], str, TextLength);
+}
+
+void ScreenBuffer::DrawSprite(int iX, int iY, WCHAR chSprite)
 {
 	if (iX < 0 || iY < 0 || iX >= MAX_SCREEN_WIDTH - 1 || iY >= MAX_SCREEN_HEIGHT)
 		return;
