@@ -52,6 +52,12 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Engine\GameInitializer">
+      <UniqueIdentifier>{901d0574-6114-4bee-9e2a-c2f8207644a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GameInit">
+      <UniqueIdentifier>{9c520be3-2535-45ab-a160-c506f7b46d26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LoadScene.h">
@@ -104,6 +110,24 @@
     </ClCompile>
     <ClCompile Include="FrameManager.cpp">
       <Filter>Engine\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseScene.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="InitializerManager.cpp">
+      <Filter>Engine\GameInitializer</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEntry.cpp">
+      <Filter>Contents\GameInit</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Contents\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +184,18 @@
     </ClInclude>
     <ClInclude Include="FrameManager.h">
       <Filter>Engine\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="GameInitializer.h">
+      <Filter>Engine\GameInitializer</Filter>
+    </ClInclude>
+    <ClInclude Include="InitializerManager.h">
+      <Filter>Engine\GameInitializer</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEntry.h">
+      <Filter>Contents\GameInit</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyTypeId.h">
+      <Filter>Contents\GameObject\enum</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

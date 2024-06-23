@@ -27,10 +27,10 @@ int main()
 	ScreenBuffer& CONSOLE = ScreenBuffer::GetInstance();
 	AssetLoaderManager& ASSETLOADER = AssetLoaderManager::GetInstance();
 	SceneManager& SCENE_MANAGER = SceneManager::GetInstance();
-	InitializeManager& INIT_MANAGER = 
-	// 근데 이건 어디서 해주지 ?ㅋㅋㅋ 
+	InitializeManager& INIT_MANAGER = InitializerManager::GetInstance();
+	// 근데 이건 또 어디서 해주지.. 원래 엔진 코드에서 구체타입은 몰라야하는데 
 	// InitializerManager.CreateInitailzier(new GameEntry())
-	// InitializerManager.Init();
+	INIT_MANAGER.Init();
 	ASSETLOADER.Load();
 
 	DWORD nextTick = TIMER.GetMilliSeconds();
