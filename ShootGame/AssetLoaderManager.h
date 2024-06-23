@@ -13,6 +13,7 @@ namespace ShootingGame
 		static AssetLoaderManager& GetInstance();
 
 		void CreateLoader(BaseAssetLoader* fileLoader);
+		BaseAssetLoader* GetLoader() const;
 		void Load();
 	private:
 		AssetLoaderManager(const AssetLoaderManager& other) = delete;

@@ -9,12 +9,12 @@
 
 using namespace ShootingGame;
 
-Player::Player(playerInfo_t playerInfo)
-	:GameBaseObject(static_cast<int>(ETypeId::PLAYER), playerInfo.x, playerInfo.y)
-	,mHp(playerInfo.hp)
-	,mAttackPower(playerInfo.atk)
-	,mAttackSpeed(playerInfo.attackSpeed)
-	,mSpeed(playerInfo.speed)
+Player::Player(int x, int y)
+	:GameBaseObject(static_cast<int>(eTypeId::PLAYER), x, y)
+	,mHp(10)
+	,mAttackPower(3)
+	,mAttackSpeed(20)
+	,mSpeed(20)
 {
 
 }
@@ -61,10 +61,18 @@ void Player::Move(const int keyinput)
 void Player::Attack()
 {
 	GameObjectManager& gm = GameObjectManager::GetInstance();
-
-	gm.CreateObject(new Bullet(mX, mY - 1, static_cast<int>(ETypeId::PLAYER), mAttackSpeed));
+	gm.CreateObject(new Bullet(mX, mY - 1, static_cast<int>(eTypeId::PLAYER), mAttackPower, mAttackSpeed));
 }
 
+void Player::Attacked(int damage)
+{
+	mHp -= damage;
+	if (mHp < 0)
+	{
+		mIsAlive = false;
+	}
+	return;
+}
 
 void Player::KeyInput()
 {
@@ -108,16 +116,11 @@ void Player::Draw()
 
 void Player::Update()
 {
-	//Å°ÀÔ·Â
 	KeyInput();
 }
 
 
 void Player::OnCollision(GameBaseObject* object)
 {
-	if ((object->GetX() == mX) && (object->GetY() == mY))
-	{
-		mIsAlive = false;
-	}
 	return;
 }

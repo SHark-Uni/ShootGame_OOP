@@ -1,6 +1,7 @@
 #include "TitleScene.h"
 #include "ScreenBuffer.h"
 #include "SceneManager.h"
+#include "GameScene.h"
 
 #include <windows.h>
 
@@ -24,8 +25,8 @@ void TitleScene::DrawMainMenu()
 	ScreenBuffer& s = ScreenBuffer::GetInstance();
 	//제목 그리기
 	s.DrawString(L"SLUG ver2",25, 5);
-	s.DrawString(L"시작하기", 25, START_MENU_CURSOR);
-	s.DrawString(L"종료하기", 25, EXIT_MENU_CURSOR);
+	s.DrawString(L"시작하기", 25, mMenuCursorX);
+	s.DrawString(L"종료하기", 25, mMenuCursorY);
 
 }
 
@@ -33,7 +34,6 @@ bool TitleScene::Update()
 {
 	//키 입력
 	DrawMainMenu();
-	
 	if (GetAsyncKeyState(VK_DOWN))
 	{
 		if (mMenuCursorY < EXIT_MENU_CURSOR)
@@ -55,7 +55,7 @@ bool TitleScene::Update()
 		if (mMenuCursorY == START_MENU_CURSOR)
 		{
 			//이런느낌으로?
-			//SceneManager::GetInstance().LoadScene(new GameScene());
+			SceneManager::GetInstance().LoadScene(new GameScene(0));
 			return true;
 		}
 		else if (mMenuCursorY == EXIT_MENU_CURSOR)

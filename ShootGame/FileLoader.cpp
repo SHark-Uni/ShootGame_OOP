@@ -94,7 +94,12 @@ void FileLoader::LoadStageMetaFile()
 		{
 			fgetws(Buffer, MAX_SIZE, fp);
 			token = wcstok_s(Buffer, delims, &nextToken);
-			swscanf_s(token, L"(%d,%d,%d)", &(mStageInfo[i].enemies[j].x), &(mStageInfo[i].enemies[j].y), &(mStageInfo[i].enemies[j].pattern));
+			swscanf_s(token, L"(%d,%d,%d,%d)", 
+				&(mStageInfo[i].enemies[j].x), 
+				&(mStageInfo[i].enemies[j].y), 
+				&(mStageInfo[i].enemies[j].pattern),
+				&(mStageInfo[i].enemies[j].enemyType)
+			);
 		}
 
 		fclose(fp);
@@ -215,6 +220,11 @@ void FileLoader::Load()
 {
 	LoadStageMetaFile();
 	LoadPatternFile();
+}
+
+unsigned int FileLoader::GetTotalStageCount() const
+{
+	return mStageCount;
 }
 
 FileLoader::~FileLoader()

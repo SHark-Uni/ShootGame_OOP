@@ -27,6 +27,7 @@ bool SceneManager::RequestExitGame() const
 
 void SceneManager::Run()
 {
+	// 씬의 변경이 있다면 변경하고 , Update합니다. 
 	if (mCurScene->IsDestroyScene() == true)
 	{
 		// 새로운 씬으로 변경

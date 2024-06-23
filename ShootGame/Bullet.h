@@ -7,7 +7,7 @@ namespace ShootingGame
 	class Bullet : public GameBaseObject
 	{
 	public:
-		Bullet(int x, int y, int BulletOwner, int speed);
+		Bullet(int x, int y, int BulletOwner, int mBulletDamage, int speed);
 		virtual ~Bullet();
 
 		void Move();
@@ -17,7 +17,8 @@ namespace ShootingGame
 		void OnCollision(GameBaseObject* object) override;
 
 	private:
-		int mBulltOwner;
+		int mBulletDamage;
+		int mBulletOwner;
 		int mSpeed;
 	};
 }

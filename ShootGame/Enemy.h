@@ -7,32 +7,23 @@ namespace ShootingGame
 {
 	class Enemy : public GameBaseObject
 	{
-		typedef struct EnemyInfo
-		{
-			int x;
-			int y;
-
-			int hp;
-			int atk;
-			int attackSpeed;
-
-			int speed;
-			int pattern;
-		}EnemyInfo_t;
-
-		Enemy(EnemyInfo_t enemyInfo);
+	public:
+		Enemy(int x, int y, int movingPattern, int enemyType);
 		virtual ~Enemy();
 
 		void Move();
 		void Attack();
+		//피격당함
+		void Attacked(int damage);
 
 		void Update() override;
 		void Draw() override;
-
+		
 		void OnCollision(GameBaseObject* object) override;
 	private:
 		int mMovingPattern;
-		
+		int mEnemyType;
+
 		int mHp;
 		int mSpeed;
 

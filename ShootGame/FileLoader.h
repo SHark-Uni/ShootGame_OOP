@@ -23,12 +23,12 @@ namespace ShootingGame
 			pos_t* patterns;
 		}PatternInfo_t;
 		
-
 		typedef struct enemy
 		{
 			int x;
 			int y;
 			int pattern;
+			int enemyType;
 		}EnemyInfo_t;
 
 		typedef struct stageInfo
@@ -44,6 +44,8 @@ namespace ShootingGame
 
 		const StageInfo_t& GetStageInfo(unsigned int stageNumber) const;
 		const PatternInfo_t& PatternInfo(unsigned int patternNumber) const;
+		
+		unsigned int GetTotalStageCount() const;
 	private:
 		unsigned int mStageCount;
 		unsigned int mPatternFileCount;

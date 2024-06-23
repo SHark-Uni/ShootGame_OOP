@@ -20,6 +20,11 @@ void AssetLoaderManager::CreateLoader(BaseAssetLoader* fileLoader)
 	mLoader = fileLoader;
 }
 
+BaseAssetLoader* AssetLoaderManager::GetLoader() const
+{
+	return mLoader;
+}
+
 
 void AssetLoaderManager::Load()
 {

@@ -12,6 +12,7 @@ BaseScene::~BaseScene()
 {
 	
 }
+
 void BaseScene::GoNextScene(BaseScene* nextScene)
 {
 	mNextScene = nextScene;
@@ -19,5 +20,5 @@ void BaseScene::GoNextScene(BaseScene* nextScene)
 
 bool BaseScene::IsDestroyScene()
 {
-	return (mNextScene != nullptr)
+	return (mNextScene != nullptr);
 }
