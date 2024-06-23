@@ -99,19 +99,17 @@ void Player::Draw()
 {
 	ScreenBuffer& s = ScreenBuffer::GetInstance();
 
-	s.SpriteDraw(mX, mY, L'P');
+	s.DrawSprite(mX, mY, L'P');
 
-	s.SpriteDraw(0, 23, L'H');
-	s.SpriteDraw(1, 23, L'P');
-	s.SpriteDraw(2, 23, L'0' + mHp);
+	s.DrawSprite(0, 23, L'H');
+	s.DrawSprite(1, 23, L'P');
+	s.DrawSprite(2, 23, L'0' + mHp);
 }
 
 void Player::Update()
 {
 	//키입력
 	KeyInput();
-	//렌더링
-	Draw();
 }
 
 

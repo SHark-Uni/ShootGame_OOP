@@ -37,14 +37,13 @@ void Enemy::Update()
 	//공격 후 , 움직이기
 	Attack();
 	Move();
-	Draw();
 }
 
 void Enemy::Draw()
 {
 	ScreenBuffer& s = ScreenBuffer::GetInstance();
 
-	s.SpriteDraw(mX, mY, L'E');
+	s.DrawSprite(mX, mY, L'E');
 }
 
 void Enemy::OnCollision(GameBaseObject* object)

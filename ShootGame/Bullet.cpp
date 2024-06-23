@@ -45,19 +45,16 @@ void Bullet::Move()
 	return;
 }
 
-
-
 void Bullet::Draw()
 {
 	ScreenBuffer& s = ScreenBuffer::GetInstance();
 
-	s.SpriteDraw(mX, mY, L'*');
+	s.DrawSprite(mX, mY, L'*');
 }
 
 void Bullet::Update()
 {
 	Move();
-	Draw();
 }
 
 void Bullet::OnCollision(GameBaseObject* object)

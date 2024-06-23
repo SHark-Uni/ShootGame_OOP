@@ -5,38 +5,26 @@ using namespace ShootingGame;
 AssetLoaderManager AssetLoaderManager::_AssetLoader;
 
 AssetLoaderManager::AssetLoaderManager()
+	:mLoader(nullptr)
 {
 
 }
 
 AssetLoaderManager::~AssetLoaderManager()
 {
-
+	delete mLoader;
 }
 
 void AssetLoaderManager::CreateLoader(BaseAssetLoader* fileLoader)
 {
-	mLoaderList.push_back(fileLoader);
+	mLoader = fileLoader;
 }
 
-void AssetLoaderManager::DestroyAllLoader()
-{
-	LinkedList<BaseAssetLoader*>::iterator iter;
-
-	for (iter = mLoaderList.begin(); iter != mLoaderList.end(); ++iter)
-	{
-		delete (*iter);
-	}
-	mLoaderList.clear();
-}
 
 void AssetLoaderManager::Load()
 {
-	LinkedList<BaseAssetLoader*>::iterator iter;
-	for (iter = mLoaderList.begin(); iter != mLoaderList.end(); ++iter)
-	{
-		(*iter)->Load();
-	}
+	assert(mLoader != nullptr);
+	mLoader->Load();
 }
 
 AssetLoaderManager& AssetLoaderManager::GetInstance()

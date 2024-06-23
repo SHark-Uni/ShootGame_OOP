@@ -6,6 +6,7 @@ namespace ShootingGame
 {
 	class GameScene : public BaseScene
 	{
-		void Update() override;
+	public:
+		bool Update() override;
 	};
 }

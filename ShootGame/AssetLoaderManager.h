@@ -13,7 +13,6 @@ namespace ShootingGame
 		static AssetLoaderManager& GetInstance();
 
 		void CreateLoader(BaseAssetLoader* fileLoader);
-		void DestroyAllLoader();
 		void Load();
 	private:
 		AssetLoaderManager(const AssetLoaderManager& other) = delete;
@@ -23,6 +22,6 @@ namespace ShootingGame
 		AssetLoaderManager& operator=(AssetLoaderManager&& rhs) = delete;
 
 		static AssetLoaderManager _AssetLoader;
-		LinkedList<BaseAssetLoader*> mLoaderList;
+		BaseAssetLoader* mLoader;
 	};
 }
