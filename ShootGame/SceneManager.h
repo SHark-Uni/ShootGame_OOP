@@ -8,8 +8,9 @@ namespace ShootingGame
 	public:
 		static SceneManager& GetInstance();
 
+		BaseScene* GetCurrentScene() const;
 		bool RequestExitGame() const;
-
+		
 		void Run();
 		void LoadScene(BaseScene* NextScene);
 	private:

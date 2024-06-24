@@ -13,8 +13,9 @@ namespace ShootingGame
 		bool Update() override;
 	private:
 		enum {
-			START_MENU_CURSOR = 15,
-			EXIT_MENU_CURSOR = 16,
+			START_MENU_CURSOR_Y = 15,
+			EXIT_MENU_CURSOR_Y = 16,
+			MENU_CURSOR_X = 25,
 		};
 		int mMenuCursorX;
 		int mMenuCursorY;

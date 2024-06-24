@@ -25,6 +25,11 @@ bool SceneManager::RequestExitGame() const
 	return mIsExitGame;
 }
 
+BaseScene* SceneManager::GetCurrentScene() const
+{
+	return mCurScene;
+}
+
 void SceneManager::Run()
 {
 	// 씬의 변경이 있다면 변경하고 , Update합니다. 

@@ -29,7 +29,7 @@ int main()
 	SceneManager& SCENE_MANAGER = SceneManager::GetInstance();
 	InitializeManager& INIT_MANAGER = InitializerManager::GetInstance();
 	// 근데 이건 또 어디서 해주지.. 원래 엔진 코드에서 구체타입은 몰라야하는데 
-	// InitializerManager.CreateInitailzier(new GameEntry())
+	InitializerManager.CreateInitailzier(new GameEntry())
 	INIT_MANAGER.Init();
 	ASSETLOADER.Load();
 

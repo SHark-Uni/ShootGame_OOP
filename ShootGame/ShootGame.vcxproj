@@ -136,7 +136,9 @@
     <ClCompile Include="BaseScene.cpp" />
     <ClCompile Include="BaseScene.h" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="ClearScene.cpp" />
     <ClCompile Include="ClearScene.h" />
+    <ClCompile Include="DeadScene.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FIleLoaderTest.h" />
     <ClCompile Include="FrameManager.cpp" />
@@ -146,11 +148,13 @@
     <ClCompile Include="GameObjectManger.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="InitializerManager.cpp" />
+    <ClCompile Include="LoadScene.cpp" />
     <ClCompile Include="LoadScene.h" />
     <ClCompile Include="GameScene.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SceneTypeId.h" />
     <ClCompile Include="ScreenBuffer.cpp" />
     <ClCompile Include="ScreenTest.cpp" />
     <ClCompile Include="FileLoader.cpp" />

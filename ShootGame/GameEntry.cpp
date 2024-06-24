@@ -6,6 +6,8 @@
 #include "FileLoader.h"
 #include "TitleScene.h"
 
+
+
 using namespace ShootingGame;
 
 void GameEntry::Init()
