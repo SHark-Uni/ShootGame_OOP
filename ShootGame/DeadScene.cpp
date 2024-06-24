@@ -84,6 +84,5 @@ bool DeadScene::Update()
 			break;
 		}
 	}
-
 	return true;
 }
