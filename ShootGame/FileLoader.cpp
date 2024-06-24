@@ -119,6 +119,7 @@ const FileLoader::StageInfo_t& FileLoader::GetStageInfo(unsigned int stageNumber
 	{
 		return mStageInfo[stageNumber];
 	}
+	assert(false);
 	return { 0, nullptr };
 }
 
@@ -128,7 +129,7 @@ const FileLoader::PatternInfo_t& FileLoader::PatternInfo(unsigned int patternNum
 	{
 		return mPatternInfo[patternNumber];
 	}
-	
+	assert(false);
 	return { 0 , nullptr };
 }
 
@@ -150,16 +151,17 @@ void FileLoader::LoadPatternFile()
 
 	//Read Header
 	fgetws(Buffer, MAX_SIZE, fp);
-	swscanf_s(Buffer, L"%d", &mPatternFileCount);
 
-	//Read Header
 	fgetws(Buffer, MAX_SIZE, fp);
+	swscanf_s(Buffer, L"%d", &mPatternFileCount);
 
 	fileNames = new WCHAR * [mPatternFileCount];
 	WCHAR* token;
 	size_t tokenLengths;
 	WCHAR* nextToken = nullptr;
-
+	
+	//ReadHeader
+	fgetws(Buffer, MAX_SIZE, fp);
 	for (size_t i = 0; i < mPatternFileCount; i++)
 	{
 		fgetws(Buffer, MAX_SIZE, fp);
@@ -172,7 +174,7 @@ void FileLoader::LoadPatternFile()
 		wcsncpy_s(fileNames[i], PREFIX_LENGTH + tokenLengths + 1, FILE_PREFIX, PREFIX_LENGTH);
 		fileNames[i][PREFIX_LENGTH] = L'\0';
 		wcscat_s(fileNames[i], PREFIX_LENGTH + tokenLengths + 1, token);
-		fileNames[i][tokenLengths] = L'\0';
+		fileNames[i][PREFIX_LENGTH + tokenLengths] = L'\0';
 	}
 	fclose(fp);
 

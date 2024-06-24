@@ -1,6 +1,8 @@
 #include "GameScene.h"
 #include "ScreenBuffer.h"
 
+#include <iostream>
+
 #include "ClearScene.h"
 #include "LoadScene.h"
 #include "DeadScene.h"
@@ -49,7 +51,7 @@ GameScene::GameScene()
 		);
 	}
 }
-
+//재시작 시, 실행되는 함수
 GameScene::GameScene(unsigned int curStage)
 	: BaseScene(static_cast<int>(eSceneTypeId::GAME_SCENE))
 	, mCurStage(curStage)
@@ -91,7 +93,6 @@ GameScene::GameScene(unsigned int totalStage, unsigned int curStage, unsigned in
 	, mCurEnemy(totalEnemy)
 	, mIsPlayerAlive(true)
 {
-
 }
 
 // 이거 GameObjectManager한테 부탁해야하나?
@@ -123,24 +124,29 @@ GameScene::~GameScene()
 bool GameScene::Update()
 {
 	SceneManager& sm = SceneManager::GetInstance();
+	GameObjectManager& gm = GameObjectManager::GetInstance();
 	// 플레이 중 , 플레이어가 죽었는지 확인 해야함
 	if (mIsPlayerAlive == false)
 	{
+		// 나머지 GameObjec의 개체 정리 + DeadScene으로 넘어가기
+		gm.DestroyAllObject();
 		sm.LoadScene(new DeadScene(mCurStage));
 		return true;
 	}
 
+	// 현재 스테이지가 마지막 스테이지라면, 클리어 씬으로 가야함.
+	if (mCurEnemy == 0 && mCurStage == mtotalStage - 1)
+	{
+		//플레이어 개체 소멸 + ClearScene으로 이동
+		gm.DestroyAllObject();
+		sm.LoadScene(new ClearScene());
+		return true;
+	}
 	// 모든 적이 죽었다면 , 다음 씬으로 넘어가야한다.
 	if (mCurEnemy == 0)
 	{
-		//마지막 스테이지를 클리어 하는 경우
-		if (mCurStage == mtotalStage - 1)
-		{
-			// 현재 스테이지가 마지막 스테이지라면, 클리어 씬으로 가야함.
-			sm.LoadScene(new ClearScene());
-			return true;
-		}
-		sm.LoadScene(new LoadScene(++mCurStage))
+		sm.LoadScene(new LoadScene(++mCurStage));
+		return true;
 	}
 	return true;
 }

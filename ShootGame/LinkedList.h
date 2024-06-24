@@ -269,7 +269,7 @@ namespace ShootingGame
 		static_assert(nextNode != nullptr,"you try to delete,there are no elements.");
 		nextNode->prev = &mHead;
 
-		free(deleteNode);
+		delete deleteNode;
 		--mSize;
 	}
 
@@ -283,7 +283,7 @@ namespace ShootingGame
 		static_assert(prevNode != nullptr,"you try to delete,there are no elements.");
 		prevNode->next = &mTail;
 		
-		free(deleteNode);
+		delete deleteNode;
 		--mSize;
 	}
 
@@ -311,6 +311,9 @@ namespace ShootingGame
 			curNode = curNode->next;
 			delete tmp;
 		}
+		mHead.next = &mTail;
+		mTail.prev = &mHead;
+		mSize = 0;
 	}
 
 	template <typename T>
@@ -343,7 +346,7 @@ namespace ShootingGame
 
 				nextNode->prev = prevNode;
 				prevNode->next = nextNode;
-				free(curNode);
+				delete curNode;
 				return;
 			}
 			curNode = curNode->next;

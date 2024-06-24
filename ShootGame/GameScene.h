@@ -1,5 +1,4 @@
 #pragma once
-
 #include "BaseScene.h"
 
 namespace ShootingGame

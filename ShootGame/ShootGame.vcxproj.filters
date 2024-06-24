@@ -60,15 +60,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LoadScene.h">
-      <Filter>Contents\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="ClearScene.h">
-      <Filter>Contents\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="GameScene.h">
-      <Filter>Contents\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="FileLoader.cpp">
       <Filter>Contents\Loader</Filter>
     </ClCompile>
@@ -101,9 +92,6 @@
     </ClCompile>
     <ClCompile Include="FIleLoaderTest.h">
       <Filter>테스트코드</Filter>
-    </ClCompile>
-    <ClCompile Include="BaseScene.h">
-      <Filter>Engine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="AssetLoaderManager.cpp">
       <Filter>Engine\Loader</Filter>
@@ -208,6 +196,21 @@
     </ClInclude>
     <ClInclude Include="TypeId.h">
       <Filter>Contents\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameManagerTest.h">
+      <Filter>테스트코드</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ClearScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseScene.h">
+      <Filter>Engine\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

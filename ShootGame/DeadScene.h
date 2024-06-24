@@ -14,12 +14,10 @@ namespace ShootingGame
 	private:
 		enum {
 			RETRY_MENU = 10,
-			TITLE_MENU = 11,
-			EXIT_MENU = 12,
+			TITLE_MENU = 12,
+			EXIT_MENU = 14,
 			MENU_CURSOR_X = 15,
 		};
 		unsigned int mDeadStage;
-		int mMenuCursorX;
-		int mMenuCursorY;
 	};
 }

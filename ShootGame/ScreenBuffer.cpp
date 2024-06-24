@@ -1,4 +1,4 @@
-#pragma warning ( disable : 26495 )
+#pragma warning ( disable : 26495 4996)
 #include "ScreenBuffer.h"
 
 #include <stdio.h>
@@ -33,7 +33,7 @@ void ScreenBuffer::DrawString(const WCHAR* str, int x, int y)
 	{
 		TextLength = (MAX_SCREEN_WIDTH - 1) - x;
 	}
-	wcsncpy_s(mScreenBuffer[y], str, TextLength);
+	wcsncpy((mScreenBuffer[y] + x), str, TextLength);
 }
 
 void ScreenBuffer::DrawSprite(int iX, int iY, WCHAR chSprite)

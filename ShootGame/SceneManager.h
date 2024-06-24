@@ -12,6 +12,7 @@ namespace ShootingGame
 		bool RequestExitGame() const;
 		
 		void Run();
+		void CreateScene(BaseScene* scene);
 		void LoadScene(BaseScene* NextScene);
 	private:
 		SceneManager();

@@ -21,9 +21,9 @@ namespace ShootingGame
 		void OnCollision(GameBaseObject* object) override;
 	private:
 		int mHp;
-		int mSpeed;
+		int mPlayerInterval;
 
+		int mPlayerTick;
 		int mAttackPower;
-		int mAttackSpeed;
 	};
 }

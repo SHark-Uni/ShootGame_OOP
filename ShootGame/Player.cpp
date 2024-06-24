@@ -9,27 +9,31 @@
 #include "GameScene.h"
 
 #include "TypeId.h"
+#include "SceneTypeId.h"
 
 using namespace ShootingGame;
 
 Player::Player(int x, int y)
 	:GameBaseObject(static_cast<int>(eTypeId::PLAYER), x, y)
-	,mHp(10)
-	,mAttackPower(3)
-	,mAttackSpeed(20)
-	,mSpeed(20)
+	, mHp(8)
+	, mAttackPower(3)
+	, mPlayerInterval(2)
+	, mPlayerTick(0)
 {
 
 }
 
 Player::~Player()
 {
-	//죽었다는걸 GameScene에게 알려줘야함.
 	SceneManager& sm = SceneManager::GetInstance();
+	// 게임 중 사망하는 경우
+	if (sm.GetCurrentScene()->GetSceneTypeId() == static_cast<int>(eSceneTypeId::GAME_SCENE))
+	{
+		GameScene* gameScene = reinterpret_cast<GameScene*>(sm.GetCurrentScene());
+		gameScene->OnPlayerDead();
+	}
 
-	GameScene* gameScene = reinterpret_cast<GameScene*>(sm.GetCurrentScene());
-	gameScene->OnPlayerDead();
-	
+	//게임이 끝나서 플레이어 개체를 소멸시키는 경우
 }
 
 void Player::Move(const int keyinput)
@@ -69,7 +73,7 @@ void Player::Move(const int keyinput)
 void Player::Attack()
 {
 	GameObjectManager& gm = GameObjectManager::GetInstance();
-	gm.CreateObject(new Bullet(mX, mY - 1, static_cast<int>(eTypeId::PLAYER), mAttackPower, mAttackSpeed));
+	gm.CreateObject(new Bullet(mX, mY - 1, static_cast<int>(eTypeId::PLAYER), mAttackPower, mPlayerInterval));
 }
 
 void Player::Attacked(int damage)
@@ -108,6 +112,7 @@ void Player::KeyInput()
 	{
 		Attack();
 	}
+	
 }
 
 
@@ -119,12 +124,20 @@ void Player::Draw()
 
 	s.DrawSprite(0, 23, L'H');
 	s.DrawSprite(1, 23, L'P');
-	s.DrawSprite(2, 23, L'0' + mHp);
+
+	s.DrawSprite(2, 23, L'8');
+	s.DrawSprite(3, 23, L'/');
+	s.DrawSprite(4, 23, L'0' + mHp);
 }
 
 void Player::Update()
 {
-	KeyInput();
+	++mPlayerTick;
+	if (mPlayerTick == mPlayerInterval)
+	{
+		KeyInput();
+		mPlayerTick = 0;
+	}
 }
 
 

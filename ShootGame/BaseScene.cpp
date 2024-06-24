@@ -19,6 +19,11 @@ void BaseScene::GoNextScene(BaseScene* nextScene)
 	mNextScene = nextScene;
 }
 
+int BaseScene::GetSceneTypeId() const
+{
+	return mSceneType;
+}
+
 bool BaseScene::IsDestroyScene()
 {
 	return (mNextScene != nullptr);

@@ -11,29 +11,23 @@ namespace ShootingGame
 
 	enum class eNormalTypeInfo
 	{
-		HP = 5,
-		Speed = 10,
-
 		AttackPower = 2,
-		AttackSpeed = 10,
+		HP = 5,
+		Interval = 30,
 	};
 
 	enum class eAttackTypeInfo
 	{
 		HP = 1,
-		Speed = 15,
-
 		AttackPower = 3,
-		AttackSpeed = 15,
+		Interval = 25,
 	};
 
 	enum class eDefenderTypeInfo
 	{
-		HP = 8,
-		Speed = 5,
-
 		AttackPower = 1,
-		AttackSpeed = 5,
+		HP = 8,
+		Interval = 35,
 	};
 
 }

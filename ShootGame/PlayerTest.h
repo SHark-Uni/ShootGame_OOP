@@ -7,7 +7,7 @@ using namespace ShootingGame;
 
 inline void PlayerTest()
 {
-    Player* p = new Player({ 10, 0, 5, 10, 5, 10 });
+    Player* p = new Player(10, 0);
 
     GameObjectManager& gm = GameObjectManager::GetInstance();
     ScreenBuffer& s = ScreenBuffer::GetInstance();

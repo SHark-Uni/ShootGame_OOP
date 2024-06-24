@@ -30,6 +30,11 @@ BaseScene* SceneManager::GetCurrentScene() const
 	return mCurScene;
 }
 
+void SceneManager::CreateScene(BaseScene* scene)
+{
+	mCurScene = scene;
+}
+
 void SceneManager::Run()
 {
 	// 씬의 변경이 있다면 변경하고 , Update합니다. 

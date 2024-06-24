@@ -4,6 +4,10 @@
 #include "SceneTypeId.h"
 
 #include "GameObjectManager.h"
+#include "AssetLoaderManager.h"
+#include "FrameManager.h"
+
+#include "FileLoader.h"
 #include "SceneManager.h"
 #include "GameScene.h"
 
@@ -17,33 +21,28 @@ Enemy::Enemy(int x, int y, int movingPattern, int enemyType)
 	, mMovingPattern(movingPattern)
 	, mEnemyType(enemyType)
 	, mHp(0)
-	, mSpeed(0)
+	, mEnemyInterval(0)
 	, mAttackPower(0)
-	, mAttackSpeed(0)
+	, mMoveCursor(0)
+	, mEnemyTick(0)
 {
 	//유형별로 Spawn시키기
 	switch (enemyType)
 	{
 	case static_cast<int>(eEnemyTypeId::NORMAL):
 		mHp = static_cast<int>(eNormalTypeInfo::HP);
-		mSpeed = static_cast<int>(eNormalTypeInfo::Speed);
-
+		mEnemyInterval = static_cast<int>(eNormalTypeInfo::Interval);
 		mAttackPower = static_cast<int>(eNormalTypeInfo::AttackPower);
-		mAttackSpeed = static_cast<int>(eNormalTypeInfo::AttackSpeed);
 		break;
 	case static_cast<int>(eEnemyTypeId::ATTACKER):
 		mHp = static_cast<int>(eAttackTypeInfo::HP);
-		mSpeed = static_cast<int>(eAttackTypeInfo::Speed);
-
+		mEnemyInterval = static_cast<int>(eAttackTypeInfo::Interval);
 		mAttackPower = static_cast<int>(eAttackTypeInfo::AttackPower);
-		mAttackSpeed = static_cast<int>(eAttackTypeInfo::AttackSpeed);
 		break;
 	case static_cast<int>(eEnemyTypeId::DEFENDER):
 		mHp = static_cast<int>(eDefenderTypeInfo::HP);
-		mSpeed = static_cast<int>(eDefenderTypeInfo::Speed);
-
+		mEnemyInterval = static_cast<int>(eDefenderTypeInfo::Interval);
 		mAttackPower = static_cast<int>(eDefenderTypeInfo::AttackPower);
-		mAttackSpeed = static_cast<int>(eDefenderTypeInfo::AttackSpeed);
 		break;
 	default:
 		assert(false);
@@ -54,30 +53,55 @@ Enemy::Enemy(int x, int y, int movingPattern, int enemyType)
 //무빙 패턴에 따라 움직여야함.
 void Enemy::Move()
 {
-	//TEST Move
-	++mX;
+	AssetLoaderManager& al = AssetLoaderManager::GetInstance();
+	FileLoader* movePattern = reinterpret_cast<FileLoader*>(al.GetLoader());
+	FileLoader::PatternInfo_t pattern = movePattern->PatternInfo(mMovingPattern);
+		
+	mX += pattern.patterns[mMoveCursor].x;
+	mY += pattern.patterns[mMoveCursor].y;
+
+	mMoveCursor = (mMoveCursor + 1) % pattern.patternCount;
 }
 
 //Create Bullet
 void Enemy::Attack()
 {
 	GameObjectManager& gm = GameObjectManager::GetInstance();
-
-	gm.CreateObject(new Bullet(mX, mY + 1, static_cast<int>(eTypeId::ENEMY), mAttackPower, mAttackSpeed));
+	gm.CreateObject(new Bullet(mX, mY + 1, static_cast<int>(eTypeId::ENEMY), mAttackPower, mEnemyInterval));
 }
 
 void Enemy::Update()
 {
 	//공격 후 , 움직이기
-	Attack();
-	Move();
+	++mEnemyTick;
+	if (mEnemyInterval == mEnemyTick)
+	{
+		Attack();
+		Move();
+		mEnemyTick = 0;
+	}
+
 }
 
 void Enemy::Draw()
 {
 	ScreenBuffer& s = ScreenBuffer::GetInstance();
 
-	s.DrawSprite(mX, mY, L'E');
+	switch (mEnemyType)
+	{
+	case static_cast<int>(eEnemyTypeId::NORMAL):
+		s.DrawSprite(mX, mY, L'E');
+		break;
+	case static_cast<int>(eEnemyTypeId::ATTACKER):
+		s.DrawSprite(mX, mY, L'A');
+		break;
+	case static_cast<int>(eEnemyTypeId::DEFENDER):
+		s.DrawSprite(mX, mY, L'D');
+		break;
+	default:
+		break;
+	}
+
 }
 
 void Enemy::OnCollision(GameBaseObject* object)

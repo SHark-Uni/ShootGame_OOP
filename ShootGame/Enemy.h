@@ -21,13 +21,14 @@ namespace ShootingGame
 		
 		void OnCollision(GameBaseObject* object) override;
 	private:
-		int mMovingPattern;
 		int mEnemyType;
-
 		int mHp;
-		int mSpeed;
+		int mMovingPattern;
+		int mMoveCursor;
+
+		int mEnemyInterval;
+		int mEnemyTick;
 
 		int mAttackPower;
-		int mAttackSpeed;
 	};
 }

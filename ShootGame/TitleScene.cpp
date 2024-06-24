@@ -27,10 +27,10 @@ void TitleScene::DrawMainMenu()
 	ScreenBuffer& s = ScreenBuffer::GetInstance();
 	//제목 그리기
 	s.DrawString(L"SLUG ver2",25, 5);
-	s.DrawString(L"시작하기", 25, START_MENU_CURSOR_Y);
-	s.DrawString(L"종료하기", 25, START_MENU_CURSOR_Y + 1);
+	s.DrawString(L"START", 25, START_MENU_CURSOR_Y);
+	s.DrawString(L"END", 25, START_MENU_CURSOR_Y + 1);
 
-	s.DrawSprite(24, START_MENU_CURSOR_Y, L'>');
+	s.DrawSprite(24, mMenuCursorY, L'>');
 }
 
 bool TitleScene::Update()

@@ -30,6 +30,7 @@ void GameObjectManager::DestroyAllObject()
 	for (iter = mList.begin(); iter != mList.end(); ++iter)
 	{
 		delete (*iter);
+
 	}
 	mList.clear();
 }
