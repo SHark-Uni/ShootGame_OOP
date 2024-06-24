@@ -6,7 +6,7 @@
 #include "FileLoader.h"
 #include "TitleScene.h"
 
-#include "SceneTypeId.h"
+
 
 using namespace ShootingGame;
 

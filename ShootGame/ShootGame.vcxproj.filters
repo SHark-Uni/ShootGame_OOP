@@ -33,9 +33,6 @@
     <Filter Include="Contents\GameObject\Interface">
       <UniqueIdentifier>{fb4d5402-4848-4b54-b5d8-149fb2a9b869}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Contents\GameObject\enum">
-      <UniqueIdentifier>{b46d7da1-f2c9-4a0c-a61f-d18e1dc9ffde}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\Scene">
       <UniqueIdentifier>{2cd9f8c5-fbc6-4c7d-932b-9c0c4daffa7e}</UniqueIdentifier>
     </Filter>
@@ -57,6 +54,9 @@
     </Filter>
     <Filter Include="Contents\GameInit">
       <UniqueIdentifier>{9c520be3-2535-45ab-a160-c506f7b46d26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Enum">
+      <UniqueIdentifier>{13b27c3b-2e5d-4927-bb10-1d3bfffd097a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +129,18 @@
     <ClCompile Include="GameScene.cpp">
       <Filter>Contents\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="SceneTypeId.h">
+      <Filter>Contents\Enum</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadScene.cpp">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="DeadScene.cpp">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ClearScene.cpp">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h">
@@ -161,9 +173,6 @@
     <ClInclude Include="GameObjectManager.h">
       <Filter>Engine\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="TypeId.h">
-      <Filter>Contents\GameObject\enum</Filter>
-    </ClInclude>
     <ClInclude Include="GameObjectManagerTest.h">
       <Filter>테스트코드</Filter>
     </ClInclude>
@@ -195,7 +204,10 @@
       <Filter>Contents\GameInit</Filter>
     </ClInclude>
     <ClInclude Include="EnemyTypeId.h">
-      <Filter>Contents\GameObject\enum</Filter>
+      <Filter>Contents\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeId.h">
+      <Filter>Contents\Enum</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
