@@ -47,7 +47,7 @@ bool DeadScene::Update()
 		return true;
 	}
 
-	if (GetAsyncKeyState('T'))
+	if (GetAsyncKeyState('Y'))
 	{
 		sm.LoadScene(new TitleScene());
 		return true;
