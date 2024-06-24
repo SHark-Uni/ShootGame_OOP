@@ -5,6 +5,9 @@
 #include "Bullet.h"
 #include "ScreenBuffer.h"
 #include "GameObjectManager.h"
+#include "SceneManager.h"
+#include "GameScene.h"
+
 #include "TypeId.h"
 
 using namespace ShootingGame;
@@ -21,7 +24,12 @@ Player::Player(int x, int y)
 
 Player::~Player()
 {
+	//죽었다는걸 GameScene에게 알려줘야함.
+	SceneManager& sm = SceneManager::GetInstance();
 
+	GameScene* gameScene = reinterpret_cast<GameScene*>(sm.GetCurrentScene());
+	gameScene->OnPlayerDead();
+	
 }
 
 void Player::Move(const int keyinput)

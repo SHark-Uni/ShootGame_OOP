@@ -10,7 +10,6 @@ void GameObjectManagerTest()
 	GameObjectManager& gm = GameObjectManager::GetInstance();
 	ScreenBuffer& screen = ScreenBuffer::GetInstance();
 
-	Player::playerInfo_t info;
 
 	info.x = 10;
 	info.y = 10;

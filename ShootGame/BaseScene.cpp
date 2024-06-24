@@ -2,8 +2,9 @@
 
 using namespace ShootingGame;
 
-BaseScene::BaseScene()
-	:mNextScene(nullptr)
+BaseScene::BaseScene(int scenetype)
+	:mSceneType(scenetype)
+	,mNextScene(nullptr)
 {
 
 }

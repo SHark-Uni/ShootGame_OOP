@@ -7,10 +7,11 @@
 using namespace ShootingGame;
 
 
-Bullet::Bullet(int x, int y, int BulletOwner, int mBulletDamage, int speed)
+Bullet::Bullet(int x, int y, int BulletOwner, int BulletDamage, int speed)
 	:GameBaseObject(static_cast<int>(eTypeId::BULLET), x, y)
 	,mBulletOwner(BulletOwner)
 	,mSpeed(speed)
+	,mBulletDamage(BulletDamage)
 {
 
 }

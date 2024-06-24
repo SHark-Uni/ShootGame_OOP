@@ -7,16 +7,22 @@ namespace ShootingGame
 	class GameScene : public BaseScene
 	{
 	public:
-		GameScene(unsigned int stageNumber);
+		GameScene();
+		explicit GameScene(unsigned int curStage);
+		GameScene(unsigned int totalStage, unsigned int curStage, unsigned int totalEnemy);
+
 		~GameScene();
 
-		bool CanProceedToNextStage();
-		bool CheckPlayerDead();
+		void OnEnemyDead();
+		void OnPlayerDead();
 
 		bool Update() override;
 	private:
+		bool mIsPlayerAlive;
 		unsigned int mtotalStage;
 		unsigned int mCurStage;
+
 		unsigned int mtotalEnemy;
+		unsigned int mCurEnemy;
 	};
 }

@@ -6,7 +6,7 @@ namespace ShootingGame
 	{
 		friend class SceneManager;
 	public:
-		BaseScene();
+		BaseScene(int scenetype);
 		virtual ~BaseScene();
 
 		void GoNextScene(BaseScene* nextScene);
@@ -14,6 +14,7 @@ namespace ShootingGame
 
 		virtual bool Update() = 0;
 	protected:
+		int mSceneType;
 		BaseScene* mNextScene;
 	};
 }

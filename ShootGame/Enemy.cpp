@@ -1,7 +1,12 @@
 #include "Enemy.h"
 #include "TypeId.h"
 #include "EnemyTypeId.h"
+#include "SceneTypeId.h"
+
 #include "GameObjectManager.h"
+#include "SceneManager.h"
+#include "GameScene.h"
+
 #include "ScreenBuffer.h"
 #include "Bullet.h"
 
@@ -91,7 +96,12 @@ void Enemy::Attacked(int damage)
 	return;
 }
 
+
 Enemy::~Enemy()
 {
-
+	// 게임 씬에서 적이 소멸한다.
+	SceneManager& sm = SceneManager::GetInstance();
+	
+	GameScene* gameScene = reinterpret_cast<GameScene*>(sm.GetCurrentScene());
+	gameScene->OnEnemyDead();
 }

@@ -5,7 +5,12 @@ namespace ShootingGame
 {
 	class LoadScene : public BaseScene
 	{
-		void Update() override;
+	public:
+		LoadScene(unsigned int curStage);
+		~LoadScene();
+		bool Update() override;
+	private:
+		unsigned int mCurStage;
 	};
 }
 
